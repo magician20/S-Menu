@@ -1,5 +1,5 @@
 # S-Menu
-Simple Menu use architecture components, Glide, Volley, Gson
+Simple Menu use android architecture components, Glide, Volley, Gson
 to get Menu items and show them.
 also implements swipe to remove and undo it.
 https://media.giphy.com/media/xT1R9Mxo3tLFS5FmzC/giphy.gif
