@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!--Background-->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/view_background"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@color/bg_row_background">
+
+        <ImageView
+            android:id="@+id/imageDelete"
+            android:layout_width="@dimen/ic_delete"
+            android:layout_height="@dimen/ic_delete"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:contentDescription="delete"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_delete" />
+
+        <TextView
+            android:id="@+id/textDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:text="@string/delete"
+            android:textColor="#fff"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageDelete"
+            app:layout_constraintEnd_toStartOf="@+id/imageDelete"
+            app:layout_constraintTop_toTopOf="@+id/imageDelete" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <!--Foreground-->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/view_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/imageFood"
+            android:layout_width="@dimen/thumbnail"
+            android:layout_height="@dimen/thumbnail"
+            android:layout_marginLeft="@dimen/activity_padding_horizontal"
+            android:layout_marginStart="@dimen/activity_padding_horizontal"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/item_name"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@+id/textDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageFood"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Name" />
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autoSizeTextType="uniform"
+            android:textColor="@color/description"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/textPrice"
+            app:layout_constraintEnd_toEndOf="@+id/textName"
+            app:layout_constraintStart_toStartOf="@+id/textName"
+            app:layout_constraintTop_toBottomOf="@+id/textName"
+            tools:text="Description" />
+
+        <TextView
+            android:id="@+id/textPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autoSizeTextType="uniform"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textDescription"
+            app:layout_constraintStart_toStartOf="@+id/textDescription"
+            app:layout_constraintTop_toBottomOf="@+id/textDescription"
+            tools:text="Price" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

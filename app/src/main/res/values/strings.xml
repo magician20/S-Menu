@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Restaurant M</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="my_cart">Menu</string>
+    <string name="delete">Delete</string>
+
+
+</resources>
