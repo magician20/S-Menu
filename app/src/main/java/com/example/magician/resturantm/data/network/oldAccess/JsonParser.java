@@ -26,7 +26,6 @@ public final class JsonParser {
 
     /**
      * This method parses JSON from a web response and returns an array of Strings
-     * describing the weather over various days from the forecast.
      *
      * @param itemsJsonStr JSON response from server
      * @return Array of Strings describing items data

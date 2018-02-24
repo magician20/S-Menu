@@ -51,7 +51,8 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuAdapterVie
 
         /* image food */
         //TODO:here get the image by glide library
-        Glide.with(mContext).load(item.getThumbnail()).into(viewHolder.mImageView);//error here after add volley
+        Glide.with(mContext).load(item.getThumbnail()).into(viewHolder.mImageView);
+        //error here after add volley becuase of glide version wasn't sutable with volley
         
 
     }

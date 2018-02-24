@@ -92,7 +92,7 @@ public class RestaurantNetworkDataSource {
 
 
 /* ---------------------------------------------------------------------------------------------- */
-                                  /* Old Way code */
+                                  /* Old Way to get data from NetWork code */
 /* ---------------------------------------------------------------------------------------------- */
     private void oldPrepareMenuItems() {
         mExecutors.networkIO().execute(() -> {

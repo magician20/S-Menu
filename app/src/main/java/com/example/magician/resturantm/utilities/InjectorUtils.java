@@ -24,7 +24,7 @@ public class InjectorUtils {
         RestaurantNetworkDataSource networkDataSource = RestaurantNetworkDataSource
                 .getsInstance(context.getApplicationContext(), executors);
 
-        return RestaurantRepository.getsInstance(database.itemDao(), networkDataSource, executors);//error here
+        return RestaurantRepository.getsInstance(database.itemDao(), networkDataSource, executors);
     }
 
     public static RestaurantNetworkDataSource provideNetworkDataSource(Context context) {

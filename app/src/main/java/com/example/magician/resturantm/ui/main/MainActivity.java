@@ -1,14 +1,9 @@
 package com.example.magician.resturantm.ui.main;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -24,13 +19,8 @@ import android.view.MenuItem;
 import android.widget.ProgressBar;
 
 import com.example.magician.resturantm.R;
-import com.example.magician.resturantm.data.RestaurantRepository;
 import com.example.magician.resturantm.data.database.ItemEntry;
-import com.example.magician.resturantm.data.network.RestaurantNetworkDataSource;
 import com.example.magician.resturantm.utilities.InjectorUtils;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements RecyclerItemTouchHelper.RecyclerItemTouchHelperListener {
@@ -48,8 +38,10 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //set toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //change name of bar
         getSupportActionBar().setTitle(getString(R.string.my_cart));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -73,8 +65,9 @@ public class MainActivity extends AppCompatActivity
                 new RecyclerItemTouchHelper(0, ItemTouchHelper.LEFT, this);
         new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(mRecyclerView);
 
-        /* get repository object and create ModelView by using Factory */
-        MainViewModelFactory mainFactory = InjectorUtils.provideMainActivityViewModelFactory(this.getApplicationContext());
+        /* get repository object and create ViewModel by using Factory */
+        MainViewModelFactory mainFactory = InjectorUtils.provideMainActivityViewModelFactory(this);
+        // get ViewModel object
          mainViewModel = ViewModelProviders.of(this, mainFactory).get(MainActivityViewModel.class);
        /* observe the data */
         Log.d(LOG_TAG, "Start observer");// no data is comming lol
@@ -83,7 +76,7 @@ public class MainActivity extends AppCompatActivity
             if (mPosition == RecyclerView.NO_POSITION) mPosition = 0;
             mRecyclerView.smoothScrollToPosition(mPosition);
             if (itemEntries != null && itemEntries.size() != 0) {
-                showWeatherDataView();
+                showMenuDataView();
             } else {
                 showLoading();
             }
@@ -140,7 +133,7 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    private void showWeatherDataView() {
+    private void showMenuDataView() {
         // First, hide the loading indicator
         mLoadingIndicator.setVisibility(View.INVISIBLE);
         // Finally, make sure the weather data is visible

@@ -11,6 +11,8 @@ import java.util.List;
 
 /**
  * Created by magic on 1/30/2018.
+ * ViewModel use repository to get data from network or DB & then safe data
+ * even from rotation. until activity destroyed
  *  @link MainActivityViewModel   Hold data until Activity is destroyed
  */
 
